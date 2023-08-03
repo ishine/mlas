@@ -10,6 +10,7 @@ add_library(mlas STATIC
   ${MLAS_SRC_DIR}/platform.cpp
   ${MLAS_SRC_DIR}/threading.cpp
   ${MLAS_SRC_DIR}/sgemm.cpp
+  ${MLAS_SRC_DIR}/halfgemm.cpp
   ${MLAS_SRC_DIR}/qgemm.cpp
   ${MLAS_SRC_DIR}/qdwconv.cpp
   ${MLAS_SRC_DIR}/convolve.cpp
@@ -146,6 +147,8 @@ else()
             ${MLAS_SRC_DIR}/qgemm_kernel_neon.cpp
             ${MLAS_SRC_DIR}/qgemm_kernel_sdot.cpp
             ${MLAS_SRC_DIR}/qgemm_kernel_udot.cpp
+            ${MLAS_SRC_DIR}/halfgemm_kernel_neon.cpp
+            ${MLAS_SRC_DIR}/halfgemm.cpp
         )
         if (NOT APPLE)
             set(mlas_platform_srcs
